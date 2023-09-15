@@ -1,6 +1,6 @@
 package Modules;
 public class OS implements Course{
-    static public Enrollment enrollment;
+    static public Enrollment enrollment = new Enrollment();
     // static {
     //     enrollment = new Enrollment();
     // }

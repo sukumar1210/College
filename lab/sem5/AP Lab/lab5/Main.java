@@ -11,13 +11,13 @@ public class Main {
         DS.enrollment.Enroll(Ram);
         OS.enrollment.Enroll(Sita);
         DS.enrollment.Enroll(Sita);
-        System.out.println("Course Code: " + dbms.getCourseCode() + "\nCourse Title: " + dbms.getCourseTitel() + "\nCredit Hour: " + dbms.getCreditHour());
-        System.out.println("Course Code: " + ds.getCourseCode() + "\nCourse Title: " + ds.getCourseTitel() + "\nCredit Hour: " + ds.getCreditHour());
+        System.out.println("Course Code: " + dbms.getCourseCode() + "\nCourse Title: " + dbms.getCourseTitel() + "\nCredit Hour: " + dbms.getCreditHour()+"\n");
+        System.out.println("Course Code: " + ds.getCourseCode() + "\nCourse Title: " + ds.getCourseTitel() + "\nCredit Hour: " + ds.getCreditHour()+"\n");
         Ram.enterGrade(ds, 9);
         Ram.enterGrade(dbms, 8);
-        System.out.println("Student Name: " + Ram.getName() + "\nStudent ID: " + Ram.getId() + "\nStudent Email: " + Ram.getEmail() + "\nStudent Roll: " + Ram.getStudentID() + "\nStudent Department: " + Ram.getDepartment() + "\nStudent CGPA: " + Ram.getGPA());
+        System.out.println("Student Name: " + Ram.getName() + "\nStudent ID: " + Ram.getId() + "\nStudent Email: " + Ram.getEmail() + "\nStudent Roll: " + Ram.getStudentID() + "\nStudent Department: " + Ram.getDepartment() + "\nStudent CGPA: " + Ram.getGPA()+"\n");
         Sita.enterGrade(ds, 8);
         Sita.enterGrade(os, 7);
-        System.out.println("Student Name: " + Sita.getName() + "\nStudent ID: " + Sita.getId() + "\nStudent Email: " + Sita.getEmail() + "\nStudent Roll: " + Sita.getStudentID() + "\nStudent Department: " + Sita.getDepartment() + "\nStudent CGPA: " + Sita.getGPA());
+        System.out.println("Student Name: " + Sita.getName() + "\nStudent ID: " + Sita.getId() + "\nStudent Email: " + Sita.getEmail() + "\nStudent Roll: " + Sita.getStudentID() + "\nStudent Department: " + Sita.getDepartment() + "\nStudent CGPA: " + Sita.getGPA()+"\n");
     }
 }
