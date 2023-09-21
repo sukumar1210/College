@@ -1,5 +1,4 @@
 package Modules;
-// import Modules.*;
 public class Student extends Person {
     int studentID;
     String major = new String();

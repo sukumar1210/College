@@ -1,9 +1,6 @@
 package Modules;
 public class DS implements Course{
     static public Enrollment enrollment = new Enrollment();
-    // static {
-    //     enrollment = new Enrollment();
-    // }
     public String getCourseCode(){
         return "CS-201";
     }

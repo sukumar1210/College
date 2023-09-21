@@ -10,16 +10,10 @@ public class LimitedSizeStack extends Stack{
         this.limit = l-1;
     }
     public void push(int data){
-        // Removing oldest
         if(this.top == this.limit - 1){
             stack.remove(0);    
             top--;
         }
         super.push(data);
-
-        // Implemnting Circular Buffer
-        
-
-
     }
 }
