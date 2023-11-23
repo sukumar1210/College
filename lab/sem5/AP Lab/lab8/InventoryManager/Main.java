@@ -10,7 +10,8 @@ public class Main {
             System.out.println("3. Update Product");
             System.out.println("4. Get Product");
             System.out.println("5. Get All Products");
-            System.out.println("6. Exit");
+            System.out.println("6. Make Sale");
+            System.out.println("7. Exit");
             System.out.println("Enter your choice: ");
             Scanner sc = new Scanner(System.in);
             ch = sc.nextInt();
@@ -63,6 +64,20 @@ public class Main {
                     inventoryManager.displayInventory();
                     break;
                 case 6:
+                    String productName;
+                    int productQuantity;
+                    System.out.println("Enter product name: ");
+                    productName = sc.next();
+                    System.out.println("Enter product quantity: ");
+                    productQuantity = sc.nextInt();
+                    try{
+                        inventoryManager.recordSale(productName, productQuantity);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 7:
+                    System.err.println(inventoryManager.calculateDailyRevenue());
                     sc.close();
                     System.exit(0);
                     break;

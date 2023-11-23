@@ -1,9 +1,10 @@
 package customModule;
 import java.util.Scanner;
 public class InventoryManager implements InventoryOperations{
-
+    
     private Product[] products;
     private int count;
+    private int sales=0;
 
     public InventoryManager(int size) {
         products = new Product[size];
@@ -57,6 +58,30 @@ public class InventoryManager implements InventoryOperations{
             System.out.println(products[i].getName() + " " + products[i].getPrice() + " " + products[i].getQuantity());
         }
     }
+
+
+    public void recordSale(String name, int quantity) throws ProductNotFoundException, ProductLimitExceededException {
+        Product p;
+        try{
+            p = getProduct(name);
+        } catch ( ProductNotFoundException e ){
+            System.out.println(e.getMessage());
+            return;
+        }
+        if (p.getQuantity() < quantity) {
+            throw new ProductLimitExceededException("Not enough quantity of " + name + " in the inventory");
+        }
+        sales += quantity * p.getPrice();
+        p.setQuantity(p.getQuantity() - quantity);
+    }
+
+    public int calculateDailyRevenue() {
+        return sales;
+    }
+
+
+    //  Subclasses of ProductModifier
+
     public class PriceModifier extends ProductModifier{
         public PriceModifier() {}
         public void ModifyProduct(Product p) {

@@ -20,4 +20,17 @@ public class Product{
     public int getQuantity() {
         return quantity;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPrice(int price) {
+        this.price = price;
+    }
+    public void setQuantity(int quantity) throws ProductLimitExceededException {
+        if (quantity > 10) {
+            throw new ProductLimitExceededException("Quantity cannot be more than 10");
+        }
+        else this.quantity = quantity;
+    }
+
 }
